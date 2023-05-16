@@ -36,7 +36,7 @@
 
 ### Web
 
-* reqwest - HTTP client
+* reqwest = { version = "0", features = ["blocking", "json"] }
 * scraper - web content extracting
 
 ### ORM
