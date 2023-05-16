@@ -54,7 +54,7 @@
 
 ### Shell
 
-* clap
+* clap = { version = "4", features = ["derive"] }
 * enable-ansi-support - for windows
 * mincolor
 
