@@ -16,7 +16,10 @@
 
 ### Logging
 
-* tracing
+* tracing-appender = { package = "clia-tracing-appender", version = "0.2" }
+* tracing-subscriber = { version = "0.3", features = ["local-time","time"] }
+* tracing =  "0.1"
+* time = { version = "0.3.21", features = ["formatting","macros"] }
 
 ### Serialization
 
