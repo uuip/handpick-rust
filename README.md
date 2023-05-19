@@ -15,7 +15,7 @@
 * chrono-tz
 
 ### Logging
-
+[How to use tracing](https://github.com/uuip/rust_study/commit/fa658a3bfa1f82e0271b8499af7fcfc9c0bb41df)
 * tracing-appender = { package = "clia-tracing-appender", version = "0.2" }
 * tracing-subscriber = { version = "0.3", features = ["local-time","time"] }
 * tracing =  "0.1"
