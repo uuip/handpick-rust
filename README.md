@@ -65,6 +65,10 @@
 
 * semver
 
+### Cryptography
+
+* [hashes](https://github.com/RustCrypto/hashes)
+
 ### Data Analysis
 
 * polars = { git = "https://github.com/pola-rs/polars", branch = "master", features = [
