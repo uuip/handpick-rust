@@ -15,6 +15,7 @@ just `cargo add ...` or edit Cargo.toml.
 * bigdecimal
 * rust_decimal
 * num-bigint
+* uuid = { version = "1", features = ["v4"] }
 
 ### Date and Time
 
@@ -48,6 +49,7 @@ just `cargo add ...` or edit Cargo.toml.
 
 * reqwest = { version = "0", features = ["blocking", "json"] }
 * scraper - web content extracting
+* url
 
 ### ORM
 
@@ -68,10 +70,15 @@ just `cargo add ...` or edit Cargo.toml.
 * clap = { version = "4", features = ["derive"] }
 * enable-ansi-support - for windows
 * mincolor
+* indicatif
 
 ### Version Structure
 
 * semver
+
+### Algorithm
+
+* aho-corasick
 
 ### Cryptography
 
