@@ -1,6 +1,6 @@
 
 ## Short and handpick Rust crates list.
-
+just `cargo add ...` or edit Cargo.toml.
 ### Rust patterns
 
 * anyhow
@@ -8,6 +8,13 @@
 * rand
 * regex
 * sysinfo
+* num_cpus
+
+### Data Type
+
+* bigdecimal
+* rust_decimal
+* num-bigint
 
 ### Date and Time
 
@@ -50,6 +57,7 @@
 
 * tokio = { version = "1", features = ["full"] }
 * futures
+* async-trait
 
 ### Concurrency
 
