@@ -12,9 +12,11 @@ just `cargo add ...` or edit Cargo.toml.
 
 ### Data Type
 
-* bigdecimal
 * rust_decimal
+Decimal::MAX = 79228162514264337593543950335 7.92e28
+* bigdecimal
 * num-bigint
+when num > i128::MAX (170141183460469231731687303715884105727) 1.7e38
 * uuid = { version = "1", features = ["v4"] }
 
 ### Date and Time
