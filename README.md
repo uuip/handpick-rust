@@ -48,15 +48,21 @@ when num > i128::MAX (170141183460469231731687303715884105727) 1.7e38
 * calamine - read xlsx
 * rust_xlsxwriter - write xlsx
 
-### Web
+### Web Client 
 
 * reqwest = { version = "0", features = ["blocking", "json"] }
+* ureq
 * scraper - web content extracting
 * url
 
-### ORM
+### Web Framework
+
+* [axum](https://github.com/uuip/axum-demo/blob/main/Cargo.toml)
+
+### ORM & SQL Tools
 
 * sea-orm = { version = "0", features = ["sqlx-postgres", "runtime-tokio-native-tls", "macros"] }
+* sqlx = { version = "0.6", features = ["runtime-tokio-native-tls", "postgres", "all-types"] }
 
 ### Async
 
@@ -71,7 +77,7 @@ when num > i128::MAX (170141183460469231731687303715884105727) 1.7e38
 ### Shell
 
 * clap = { version = "4", features = ["derive"] }
-* enable-ansi-support - for windows
+* enable-ansi-support&#160;&#160;&#160;&#160;-- *for windows*
 * mincolor
 * indicatif
 
@@ -82,6 +88,14 @@ when num > i128::MAX (170141183460469231731687303715884105727) 1.7e38
 ### Algorithm
 
 * aho-corasick
+* alphanumeric-sort
+* float-ord
+
+### Language bindings
+
+* [pyo3](https://github.com/PyO3/pyo3)
+* libloading
+* rustix
 
 ### Cryptography
 
