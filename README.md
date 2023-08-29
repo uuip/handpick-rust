@@ -69,6 +69,8 @@ when num > i128::MAX (170141183460469231731687303715884105727) 1.7e38
 * tokio = { version = "1", features = ["full"] }
 * futures
 * async-trait
+* async-channel
+* deadqueue
 
 ### Concurrency
 
