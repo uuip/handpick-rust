@@ -10,6 +10,8 @@ just `cargo add ...` or edit Cargo.toml.
 * duplicate
 * rand
 * regex
+* itertools
+* generator
 * sysinfo
 * num_cpus
 * pin-project-lite
@@ -17,9 +19,7 @@ just `cargo add ...` or edit Cargo.toml.
 ### Data Type
 
 * indexmap
-* itertools
 * enum-iterator
-* generator
 * uuid = { version = "1.5.0", features = ["v4", "fast-rng"]}
 * rust_decimal  
 Decimal::MAX = 79228162514264337593543950335 7.92e28
@@ -72,7 +72,7 @@ when num > i128::MAX (170141183460469231731687303715884105727) 1.7e38
 * postgres-types = { version = "0.2.6", features = ["derive"]}
 * sea-orm = { version = "0.12.4", features = ["sqlx-postgres", "runtime-tokio-native-tls", "macros"] }
 * sqlx = { version = "0.7.2", features = ["runtime-tokio-native-tls", "postgres", "chrono"] }
-* 
+
 ### Web Framework
 
 * axum = { version = "0.6.20", features = ["headers"] }<br>
