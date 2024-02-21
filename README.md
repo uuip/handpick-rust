@@ -1,92 +1,109 @@
-
 ## Short and handpick Rust crates list.
+
 just `cargo add ...` or edit Cargo.toml.
+
 ### Rust patterns
 
-* anyhow
-* thiserror
-* once_cell
-* dotenvy
-* duplicate
-* rand
-* regex
+* anyhow = "1.0.80"
+* thiserror = "1.0.57"
+* once_cell = "1.19.0"
+* dotenvy = "0.15.7"
+* rand = "0.8.5"
+* regex = "1.10.3"
+* duplicate = "1.0.0"
 * itertools
 * generator
 * sysinfo
 * num_cpus
-* pin-project-lite
 
 ### Data Type
 
+* uuid = { version = "1.7.0", features = ["v4", "fast-rng"] }
+* byteorder = "1.5.0"
+* bytes = "1.5.0"
 * indexmap
-* enum-iterator
-* uuid = { version = "1.5.0", features = ["v4", "fast-rng"]}
 * rust_decimal  
-Decimal::MAX = 79228162514264337593543950335 7.92e28
+  Decimal::MAX = 79228162514264337593543950335 7.92e28
 * bigdecimal  
-when num > Decimal::MAX
+  when num > Decimal::MAX
 * num-bigint  
-when num > i128::MAX (170141183460469231731687303715884105727) 1.7e38
+  when num > i128::MAX (170141183460469231731687303715884105727) 1.7e38
+
+#### Enum
+
+* num_enum = "0.7.2"
+* strum = { version = "0.26.1", features = ["derive"] }
+* enum-iterator
+* serde_with = "3.6.1" # serde string enum
+* serde_repr = "0.1.18" # serde num enum
 
 ### Date and Time
 
-* chrono = { version = "0.4.31", features = ["serde"] }
-* chrono-tz
-* time = { version = "0.3.21", features = ["formatting","macros"] }
+* chrono = { version = "0.4.34", default-features = false, features = ["clock", "serde",] }
+* chrono-tz = "0.8.6"
+* time = { version = "0.3.31", features = ["formatting","macros"] }
 
 ### Logging
-* log = "0.4.20"
-* env_logger = "0.10.0"
-* tracing-appender = { package = "clia-tracing-appender", version = "0.2" }
-* tracing-subscriber = { version = "0.3", features = ["local-time","time"] }
-* tracing =  "0.1"
+
+* log = { version = "0.4.20", features = ["release_max_level_info"] }
+* env_logger = "0.11.2"
+* flexi_logger = "0.27.4"
+
+* tracing = "0.1.40"
+* tracing-rolling-file = "0.1.2"
+* tracing-subscriber = { version = "0.3.18", features = ["local-time", "chrono"]}
+* tracing-appender = { package = "clia-tracing-appender", version = "0.2.5"}
 
 ### Serialization
 
-* serde = { version = "1", features = ["derive"] }
-* serde_json
-* serde_yaml
-* display_json
+* serde = { version = "1.0.196", features = ["derive"] }
+* serde_json = "1.0.113"
+* serde_yaml = "0.9.32"
+* display_json = "0.2.1"
 
 ### File System
 
-* glob
+* glob = "0.3.1"
 
 ### File Processing
 
-* calamine - read xlsx
-* rust_xlsxwriter - write xlsx
+* calamine = "0.24.0" # read xlsx
+* rust_xlsxwriter = "0.62.0" # write xlsx
 
-### Web Client 
+### Web Client
 
-* reqwest = { version = "0.11.22", features = ["json", "cookies", "native-tls-alpn"] }
+* reqwest = { version = "0.11.24", features = ["json", "gzip"] }
+* scraper = "0.18.1" # web content extracting
 * ureq
-* scraper - web content extracting
-* url
 
 ### ORM & SQL Tools
 
 * tokio-postgres = { version = "0.7.10", features=["with-serde_json-1","with-chrono-0_4"]}
-* deadpool-postgres = "0.11.0"
+* deadpool-postgres = "0.12.1"
 * postgres-from-row = "0.5.2"
 * postgres-types = { version = "0.2.6", features = ["derive"]}
-* sea-orm = { version = "0.12.4", features = ["sqlx-postgres", "runtime-tokio-native-tls", "macros"] }
-* sqlx = { version = "0.7.2", features = ["runtime-tokio-native-tls", "postgres", "chrono"] }
+* sqlx = { version = "0.7.3", features = ["runtime-tokio", "sqlite", "chrono"] }
+* sea-orm = { version = "0.12.14", features = ["sqlx-sqlite", "runtime-tokio-native-tls", "macros"] }
+
+### KV DataBase
+
+* rocksdb = "0.22.0"
 
 ### Web Framework
 
-* axum = { version = "0.6.20", features = ["headers"] }<br>
-[axum](https://github.com/uuip/axum-demo/blob/main/Cargo.toml)
-* tower-http = { version = "0.4.4", features = ["cors"] }
-* serde_urlencoded
-* jsonwebtoken
+* axum = { version = "0.7.4"}
+* axum-extra = { version = "0.9.2", features = ["typed-header"] }<br>
+  [axum](https://github.com/uuip/axum-demo/blob/main/Cargo.toml)
+* tower-http = { version = "0.5.1", features = ["cors"] }
+* jsonwebtoken = "9.2.0"
 * validator = { version = "0.16.1", features = ["derive"] }
+* serde_urlencoded = "0.7.1"
 
 ### Async
 
-* tokio = { version = "1", features = ["full"] }
-* futures, futures-util
-* async-channel, deadqueue
+* futures-util = "0.3.30"
+* tokio = { version = "1.36.0", features = ["full"] }
+* async-channel = "2.2.0" # deadqueue
 
 ### Concurrency
 
@@ -94,16 +111,16 @@ when num > i128::MAX (170141183460469231731687303715884105727) 1.7e38
 
 ### Shell
 
-* pico-args
+* colored = "2.1.0" # mincolor = "2"
+* enable-ansi-support = "0.2.1" # for windows
 * clap = { version = "4", features = ["derive"] }
-* enable-ansi-support&#160;&#160;&#160;&#160;-- *for windows*
-* colored, mincolor
+* pico-args
 * indicatif
 * ratatui
 
 ### Version Structure
 
-* semver
+* semver = "1.0.21"
 
 ### Optimize Performance
 
@@ -111,7 +128,7 @@ when num > i128::MAX (170141183460469231731687303715884105727) 1.7e38
 * phf
 * ahash
 * slab
-  
+
 ### Algorithm
 
 * aho-corasick
@@ -130,9 +147,16 @@ when num > i128::MAX (170141183460469231731687303715884105727) 1.7e38
 
 ### Web3
 
-* ethers = { version = "2.0.10", features = ["legacy"] }
+* ethers = { version = "2.0.13", default-features = false, features = ["abigen", "legacy", "openssl"] }
+* rustc-hex = "2.1.0" # only use uint::FromHexError with thiserror
+* uint = "0.9.5" # only use rustc_hex::FromHexError with thiserror
+
+### Message Queue
+
+* pulsar = { version = "6.1.0", default-features = false, features = ["tokio-runtime", "compression"]}
+* schemars = "0.8.16" # make pulsar json schema
 
 ### Data Analysis
 
-* polars = { git = "https://github.com/pola-rs/polars", branch = "master", features = [
-  "parquet", "lazy", "is_in", "rank", "abs", "streaming", "algo", "propagate_nans", "dtype-full", "random"] }
+* polars = { git = "https://github.com/pola-rs/polars", branch = "main", features = [
+  "parquet", "lazy", "is_in", "rank", "abs", "streaming", "cutqcut", "propagate_nans", "dtype-full", "random"] }
