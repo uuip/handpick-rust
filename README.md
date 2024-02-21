@@ -50,9 +50,12 @@ just `cargo add ...` or edit Cargo.toml.
 * flexi_logger = "0.27.4"
 
 * tracing = "0.1.40"
-* tracing-rolling-file = "0.1.2"
-* tracing-subscriber = { version = "0.3.18", features = ["local-time", "chrono"]}
-* tracing-appender = { package = "clia-tracing-appender", version = "0.2.5"}
+* tracing-rolling-file = "0.1.2" # support rolling by log file size
+* tracing-subscriber = { version = "0.3.18", features = ["local-time"]} # use time crate and local time zone
+* tracing-subscriber = { version = "0.3.18", features = ["chrono"]} # use chromo crate, can choose Local when defining
+* tracing-appender = "0.2.3" # time in log's file name is UTC
+* tracing-appender = { package = "clia-tracing-appender", version = "0.2.5", optional = true } # time in log's file name
+  is Local
 
 ### Serialization
 
