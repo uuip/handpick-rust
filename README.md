@@ -1,165 +1,153 @@
 ## Short and handpick Rust crates list.
 
-just `cargo add ...` or edit Cargo.toml.
-
 ### Rust patterns
 
-* anyhow = "1.0.80"
-* thiserror = "1.0.57"
-* once_cell = "1.19.0"
-* dotenvy = "0.15.7"
-* rand = "0.8.5"
-* regex = "1.10.3"
-* duplicate = "1.0.0"
-* itertools
-* generator
-* sysinfo
-* num_cpus
+* `cargo add anyhow`
+* `cargo add thiserror`
+* `cargo add once_cell`
+* `cargo add dotenvy`
+* `cargo add fastrand`
+* `cargo add rand`
+* `cargo add regex`
+* `cargo add itertools`
+* `cargo add duplicate`
+* `cargo add generator`
+* `cargo add sysinfo`
+* `cargo add num_cpus`
 
 ### Data Type
 
-* uuid = { version = "1.7.0", features = ["v4", "fast-rng"] }
-* byteorder = "1.5.0"
-* bytes = "1.5.0"
-* indexmap
-* rust_decimal  
-  Decimal::MAX = 79228162514264337593543950335 7.92e28
-* bigdecimal  
-  when num > Decimal::MAX
-* num-bigint  
-  when num > i128::MAX (170141183460469231731687303715884105727) 1.7e38
+* `cargo add uuid --features v4,fast-rng`
+* `cargo add byteorder`
+* `cargo add bytes`
+* `cargo add indexmap`
+* `cargo add rust_decimal`
+  - support Decimal::MAX 7.92e28
+* `cargo add bigdecimal`
+  - used when num > Decimal::MAX
+* `cargo add num-bigint`
+  - when num > i128::MAX 1.7e38
 
 #### Enum
 
-* num_enum = "0.7.2"
-* strum = { version = "0.26.1", features = ["derive"] }
-* enum-iterator
-* serde_with = "3.6.1" # serde string enum
-* serde_repr = "0.1.18" # serde num enum
+* `cargo add num_enum`
+* `cargo add strum --features derive`
+* `cargo add enum-iterator`
+* `cargo add serde_with`
+  - serde string enum
+* `cargo add serde_repr`
+  - serde num enum
 
 ### Date and Time
 
-* chrono = { version = "0.4.34", default-features = false, features = ["clock", "serde",] }
-* chrono-tz = "0.8.6"
-* time = { version = "0.3.31", features = ["formatting","macros"] }
+* `cargo add chrono --no-default-features --features std,clock,serde`
+* `cargo add chrono-tz`
+* `cargo add time --features formatting,macros`
 
 ### Logging
 
-* log = { version = "0.4.20", features = ["release_max_level_info"] }
-* env_logger = "0.11.2"
-* flexi_logger = "0.27.4"
-
-* tracing = "0.1.40"
-* tracing-rolling-file = "0.1.2" # support rolling by log file size
-* tracing-subscriber = { version = "0.3.18", features = ["local-time"]} # use time crate and local time zone
-* tracing-subscriber = { version = "0.3.18", features = ["chrono"]} # use chromo crate, can choose Local when defining
-* tracing-appender = "0.2.3" # time in log's file name is UTC
-* tracing-appender = { package = "clia-tracing-appender", version = "0.2.5", optional = true } # time in log's file name
-  is Local
-
-### Serialization
-
-* serde = { version = "1.0.196", features = ["derive"] }
-* serde_json = "1.0.113"
-* serde_yaml = "0.9.32"
-* display_json = "0.2.1"
+* `cargo add log --features release_max_level_info`
+* `cargo add env_logger`
+* `cargo add flexi_logger`
 
 ### File System
 
-* glob = "0.3.1"
+* `cargo add glob`
 
 ### File Processing
 
-* calamine = "0.24.0" # read xlsx
-* rust_xlsxwriter = "0.62.0" # write xlsx
+* `cargo add calamine`
+* `cargo add rust_xlsxwriter --features zlib,ryu`
+
+### Serialization
+
+* `cargo add serde --features derive`
+* `cargo add serde_json`
+* `cargo add yaml-rust2`
 
 ### Web Client
 
-* reqwest = { version = "0.11.24", features = ["json", "gzip"] }
-* scraper = "0.18.1" # web content extracting
-* ureq
+* `cargo add reqwest --features json,gzip`
+* `cargo add scraper`
+  - web content extracting
 
 ### ORM & SQL Tools
 
-* tokio-postgres = { version = "0.7.10", features=["with-serde_json-1","with-chrono-0_4"]}
-* deadpool-postgres = "0.12.1"
-* postgres-from-row = "0.5.2"
-* postgres-types = { version = "0.2.6", features = ["derive"]}
-* sqlx = { version = "0.7.3", features = ["runtime-tokio", "sqlite", "chrono"] }
-* sea-orm = { version = "0.12.14", features = ["sqlx-sqlite", "runtime-tokio-native-tls", "macros"] }
-
-### KV DataBase
-
-* rocksdb = "0.22.0"
+* `cargo add tokio-postgres --features with-serde_json-1,with-chrono-0_4`
+* `cargo add deadpool-postgres`
+* `cargo add postgres-from-row`
+* `cargo add postgres-types --features derive`
+* `cargo add sqlx --features runtime-tokio,postgres,chrono`
+* `cargo add sea-orm --features sqlx-postgres,runtime-tokio-native-tls,macros`
 
 ### Web Framework
 
-* axum = { version = "0.7.4"}
-* axum-extra = { version = "0.9.2", features = ["typed-header"] }<br>
-  [axum](https://github.com/uuip/axum-demo/blob/main/Cargo.toml)
-* tower-http = { version = "0.5.1", features = ["cors"] }
-* jsonwebtoken = "9.2.0"
-* validator = { version = "0.16.1", features = ["derive"] }
-* serde_urlencoded = "0.7.1"
+* `cargo add axum`
+* `cargo add axum-extra --features typed-header`
+* `cargo add tower-http --features cors`
+* `cargo add jsonwebtoken`
+* `cargo add validator --features derive`
+* `cargo add serde_urlencoded`
 
-### Async
+### Web3
 
-* futures-util = "0.3.30"
-* tokio = { version = "1.36.0", features = ["full"] }
-* async-channel = "2.2.0" # deadqueue
+* `cargo add alloy`
+* ~~ethers = { version = "2.0.13", default-features = false, features = ["abigen", "legacy", "openssl"] }~~
 
-### Concurrency
+### KV DataBase
 
-* rayon
+* `cargo add rocksdb`
 
-### Shell
+### Message Queue
 
-* colored = "2.1.0" # mincolor = "2"
-* enable-ansi-support = "0.2.1" # for windows
-* clap = { version = "4", features = ["derive"] }
-* pico-args
-* indicatif
-* ratatui
+* `cargo add pulsar --no-default-features --features tokio-runtime,compression`
+* `cargo add schemars`
+  - make pulsar json schema
+
+### Data Analysis
+
+* `cargo add polars --features parquet,lazy,is_in,rank,abs,streaming,cutqcut,propagate_nans`
 
 ### Version Structure
 
-* semver = "1.0.21"
+* `cargo add semver`
 
-### Optimize Performance
+### Async
 
-* arc-swap
-* phf
-* ahash
-* slab
+* `cargo add futures-util`
+* `cargo add tokio --features full`
+* `cargo add async-channel`
 
-### Algorithm
+### Concurrency
 
-* aho-corasick
-* alphanumeric-sort
-* float-ord
+* `cargo add rayon`
 
-### Language bindings
+### Shell
 
-* [pyo3](https://github.com/PyO3/pyo3)
-* libloading
-* rustix
+* `cargo add colored`
+* `cargo add mincolor`
+* `cargo add enable-ansi-support`
+  - for windows
+* `cargo add clap --features derive`
+* `cargo add pico-args`
+* `cargo add indicatif`
+* `cargo add ratatui`
 
 ### Cryptography
 
 * [hashes](https://github.com/RustCrypto/hashes)
 
-### Web3
+### Algorithm
 
-* ethers = { version = "2.0.13", default-features = false, features = ["abigen", "legacy", "openssl"] }
-* rustc-hex = "2.1.0" # only use uint::FromHexError with thiserror
-* uint = "0.9.5" # only use rustc_hex::FromHexError with thiserror
+* `cargo add aho-corasick`
+* `cargo add alphanumeric-sort`
+* `cargo add float-ord`
 
-### Message Queue
+### Language bindings
 
-* pulsar = { version = "6.1.0", default-features = false, features = ["tokio-runtime", "compression"]}
-* schemars = "0.8.16" # make pulsar json schema
+* [pyo3](https://github.com/PyO3/pyo3)
 
-### Data Analysis
+### Optimize Performance
 
-* polars = { git = "https://github.com/pola-rs/polars", branch = "main", features = [
-  "parquet", "lazy", "is_in", "rank", "abs", "streaming", "cutqcut", "propagate_nans", "dtype-full", "random"] }
+* arc-swap
+* phf
