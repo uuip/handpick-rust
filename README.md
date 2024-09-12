@@ -2,6 +2,7 @@
 
 ### Rust patterns
 
+* `cargo add eyre`
 * `cargo add anyhow`
 * `cargo add thiserror`
 * `cargo add once_cell`
@@ -14,6 +15,7 @@
 * `cargo add generator`
 * `cargo add sysinfo`
 * `cargo add num_cpus`
+* `cargo add display_json`
 
 ### Data Type
 
@@ -22,11 +24,11 @@
 * `cargo add bytes`
 * `cargo add indexmap`
 * `cargo add rust_decimal`
-  - support Decimal::MAX 7.92e28
+    - support Decimal::MAX 7.92e28
 * `cargo add bigdecimal`
-  - used when num > Decimal::MAX
+    - used when num > Decimal::MAX
 * `cargo add num-bigint`
-  - when num > i128::MAX 1.7e38
+    - when num > i128::MAX 1.7e38
 
 #### Enum
 
@@ -34,13 +36,14 @@
 * `cargo add strum --features derive`
 * `cargo add enum-iterator`
 * `cargo add serde_with`
-  - serde string enum
+    - **[ has extra features ]**
+    - serde string enum
 * `cargo add serde_repr`
-  - serde num enum
+    - serde num enum
 
 ### Date and Time
 
-* `cargo add chrono --no-default-features --features std,clock,serde`
+* `cargo add chrono --no-default-features --features clock,serde`
 * `cargo add chrono-tz`
 * `cargo add time --features formatting,macros`
 
@@ -49,27 +52,36 @@
 * `cargo add log --features release_max_level_info`
 * `cargo add env_logger`
 * `cargo add flexi_logger`
+    - **[ has extra features ]**
 
 ### File System
 
 * `cargo add glob`
 
-### File Processing
+### Excel Processing
 
 * `cargo add calamine`
+    - **[ has extra features ]**
 * `cargo add rust_xlsxwriter --features zlib,ryu`
+
+### Xml Processing
+
+* `cargo add roxmltree`
+* `cargo add quick-xml`
+    - **[ has extra features ]**
 
 ### Serialization
 
 * `cargo add serde --features derive`
 * `cargo add serde_json`
+    - **[ has extra features ]**
 * `cargo add yaml-rust2`
 
 ### Web Client
 
-* `cargo add reqwest --features json,gzip`
+* `cargo add reqwest --features json,gzip,native-tls-alpn`
 * `cargo add scraper`
-  - web content extracting
+    - web content extracting
 
 ### ORM & SQL Tools
 
@@ -77,7 +89,7 @@
 * `cargo add deadpool-postgres`
 * `cargo add postgres-from-row`
 * `cargo add postgres-types --features derive`
-* `cargo add sqlx --features runtime-tokio,postgres,chrono`
+* `cargo add sqlx --features runtime-tokio,tls-native-tls,postgres,chrono`
 * `cargo add sea-orm --features sqlx-postgres,runtime-tokio-native-tls,macros`
 
 ### Web Framework
@@ -102,11 +114,13 @@
 
 * `cargo add pulsar --no-default-features --features tokio-runtime,compression`
 * `cargo add schemars`
-  - make pulsar json schema
+    - **[ has extra features ]**
+    - make pulsar json schema
 
 ### Data Analysis
 
 * `cargo add polars --features parquet,lazy,is_in,rank,abs,streaming,cutqcut,propagate_nans`
+* `cargo add ndarray --features rayon`
 
 ### Version Structure
 
@@ -126,8 +140,9 @@
 
 * `cargo add colored`
 * `cargo add mincolor`
+* `cargo add crossterm --no-default-features --features events`
 * `cargo add enable-ansi-support`
-  - for windows
+    - for windows
 * `cargo add clap --features derive`
 * `cargo add pico-args`
 * `cargo add indicatif`
