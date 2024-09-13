@@ -1,45 +1,43 @@
 ## Short and handpick Rust crates list.
 
-### Rust patterns
+### Exceptions
 
 * `cargo add eyre`
+    - include error location: file name and line
 * `cargo add anyhow`
+    - without location
 * `cargo add thiserror`
-* `cargo add once_cell`
+
+### Global Variable
+
+| crate                 | Use cases     |
+|-----------------------|---------------|
+| std::cell::OnceCell   | Single Thread |
+| std::sync::OnceLock   | Multi-Thread  |
+| `cargo add once_cell` | All           |
+
+### Rust patterns
+
+* `cargo add regex`
 * `cargo add dotenvy`
 * `cargo add fastrand`
 * `cargo add rand`
-* `cargo add regex`
-* `cargo add itertools`
 * `cargo add duplicate`
-* `cargo add generator`
-* `cargo add sysinfo`
-* `cargo add num_cpus`
 * `cargo add display_json`
+* `cargo add itertools`
+* `cargo add generator`
 
 ### Data Type
 
 * `cargo add uuid --features v4,fast-rng`
-* `cargo add byteorder`
-* `cargo add bytes`
+* `cargo add byteorder bytes`
 * `cargo add indexmap`
 * `cargo add rust_decimal`
     - support Decimal::MAX 7.92e28
 * `cargo add bigdecimal`
     - used when num > Decimal::MAX
 * `cargo add num-bigint`
-    - when num > i128::MAX 1.7e38
-
-#### Enum
-
-* `cargo add num_enum`
-* `cargo add strum --features derive`
-* `cargo add enum-iterator`
-* `cargo add serde_with`
-    - **[ has extra features ]**
-    - serde string enum
-* `cargo add serde_repr`
-    - serde num enum
+    - used when num > i128::MAX 1.7e38
 
 ### Date and Time
 
@@ -47,34 +45,45 @@
 * `cargo add chrono-tz`
 * `cargo add time --features formatting,macros`
 
+### Enum
+
+* `cargo add num_enum`
+* `cargo add strum --features derive`
+* `cargo add enum-iterator`
+* `cargo add serde_with`
+    - **has extra features**
+    - serde string enum
+* `cargo add serde_repr`
+    - serde num enum
+
 ### Logging
 
 * `cargo add log --features release_max_level_info`
 * `cargo add env_logger`
 * `cargo add flexi_logger`
-    - **[ has extra features ]**
+    - **has extra features**
 
-### File System
+### File Access
 
 * `cargo add glob`
 
 ### Excel Processing
 
 * `cargo add calamine`
-    - **[ has extra features ]**
+    - **has extra features**
 * `cargo add rust_xlsxwriter --features zlib,ryu`
 
 ### Xml Processing
 
 * `cargo add roxmltree`
 * `cargo add quick-xml`
-    - **[ has extra features ]**
+    - **has extra features**
 
 ### Serialization
 
 * `cargo add serde --features derive`
 * `cargo add serde_json`
-    - **[ has extra features ]**
+    - **has extra features**
 * `cargo add yaml-rust2`
 
 ### Web Client
@@ -114,7 +123,7 @@
 
 * `cargo add pulsar --no-default-features --features tokio-runtime,compression`
 * `cargo add schemars`
-    - **[ has extra features ]**
+    - **has extra features**
     - make pulsar json schema
 
 ### Data Analysis
@@ -147,6 +156,11 @@
 * `cargo add pico-args`
 * `cargo add indicatif`
 * `cargo add ratatui`
+
+#### System Info
+
+* `cargo add sysinfo`
+* `cargo add num_cpus`
 
 ### Cryptography
 
