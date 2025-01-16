@@ -10,11 +10,11 @@
 
 ### Global Variable
 
-| crate                 | Use cases     |
-|-----------------------|---------------|
-| std::cell::OnceCell   | Single Thread |
-| std::sync::OnceLock   | Multi-Thread  |
-| `cargo add once_cell` | All           |
+| crate                                      |                                     |
+|--------------------------------------------|-------------------------------------|
+| std::cell::{OnceCell, LazyCell}            | once_cell::unsync::{OnceCell, Lazy} |
+| std::sync::OnceLock | once_cell::sync::OnceCell           |
+| std::sync::LazyLock   | once_cell::sync::Lazy               |
 
 ### Rust patterns
 
