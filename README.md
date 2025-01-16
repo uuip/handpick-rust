@@ -10,11 +10,11 @@
 
 ### Global Variable
 
-| crate                                      |                                     |
-|--------------------------------------------|-------------------------------------|
-| std::cell::{OnceCell, LazyCell}            | once_cell::unsync::{OnceCell, Lazy} |
-| std::sync::OnceLock | once_cell::sync::OnceCell           |
-| std::sync::LazyLock   | once_cell::sync::Lazy               |
+| crate                           |                                     |
+|---------------------------------|-------------------------------------|
+| std::cell::{OnceCell, LazyCell} | once_cell::unsync::{OnceCell, Lazy} |
+| std::sync::OnceLock             | once_cell::sync::OnceCell           |
+| std::sync::LazyLock             | once_cell::sync::Lazy               |
 
 ### Rust patterns
 
@@ -23,13 +23,12 @@
 * `cargo add fastrand`
 * `cargo add rand`
 * `cargo add duplicate`
-* `cargo add display_json`
 * `cargo add itertools`
-* `cargo add generator`
 
 ### Data Type
 
 * `cargo add uuid --features v4,fast-rng`
+* `cargo add short-uuid`
 * `cargo add byteorder bytes`
 * `cargo add indexmap`
 * `cargo add rust_decimal`
@@ -49,7 +48,6 @@
 
 * `cargo add num_enum`
 * `cargo add strum --features derive`
-* `cargo add enum-iterator`
 * `cargo add serde_with`
     - **has extra features**
     - serde string enum
@@ -66,6 +64,10 @@
 ### File Access
 
 * `cargo add glob`
+* `cargo add home`
+* `cargo add yaml-rust2`
+* `cargo add toml`
+* `cargo add roxmltree`
 
 ### Excel Processing
 
@@ -73,18 +75,12 @@
     - **has extra features**
 * `cargo add rust_xlsxwriter --features zlib,ryu`
 
-### Xml Processing
-
-* `cargo add roxmltree`
-* `cargo add quick-xml`
-    - **has extra features**
-
 ### Serialization
 
 * `cargo add serde --features derive`
 * `cargo add serde_json`
     - **has extra features**
-* `cargo add yaml-rust2`
+* `cargo add serde_json_path`
 
 ### Web Client
 
@@ -113,7 +109,8 @@
 ### Web3
 
 * `cargo add alloy`
-* ~~ethers = { version = "2.0.13", default-features = false, features = ["abigen", "legacy", "openssl"] }~~
+* ~~ethers = { version = "2.0.13", default-features = false,
+  features = ["abigen", "legacy", "openssl"] }~~
 
 ### KV DataBase
 
@@ -148,14 +145,14 @@
 ### Shell
 
 * `cargo add colored`
-* `cargo add mincolor`
 * `cargo add crossterm --no-default-features --features events`
+* `cargo add pico-args`
+* `cargo add clap --features derive`
 * `cargo add enable-ansi-support`
     - for windows
-* `cargo add clap --features derive`
-* `cargo add pico-args`
 * `cargo add indicatif`
 * `cargo add ratatui`
+* `cargo add mincolor`
 
 #### System Info
 
@@ -165,6 +162,7 @@
 ### Cryptography
 
 * [hashes](https://github.com/RustCrypto/hashes)
+* `cargo add base64`
 
 ### Algorithm
 
