@@ -10,7 +10,7 @@
 
 ### Global Variable
 
-| crate                           |                                     |
+| std                             |  crate                                   |
 |---------------------------------|-------------------------------------|
 | std::cell::{OnceCell, LazyCell} | once_cell::unsync::{OnceCell, Lazy} |
 | std::sync::OnceLock             | once_cell::sync::OnceCell           |
@@ -49,7 +49,6 @@
 * `cargo add num_enum`
 * `cargo add strum --features derive`
 * `cargo add serde_with`
-    - **has extra features**
     - serde string enum
 * `cargo add serde_repr`
     - serde num enum
@@ -59,7 +58,6 @@
 * `cargo add log --features release_max_level_info`
 * `cargo add env_logger`
 * `cargo add flexi_logger`
-    - **has extra features**
 
 ### File Access
 
@@ -72,21 +70,18 @@
 ### Excel Processing
 
 * `cargo add calamine`
-    - **has extra features**
 * `cargo add rust_xlsxwriter --features zlib,ryu`
 
 ### Serialization
 
 * `cargo add serde --features derive`
 * `cargo add serde_json`
-    - **has extra features**
 * `cargo add serde_json_path`
 
 ### Web Client
 
 * `cargo add reqwest --features json,gzip,native-tls-alpn`
 * `cargo add scraper`
-    - web content extracting
 
 ### ORM & SQL Tools
 
@@ -120,7 +115,6 @@
 
 * `cargo add pulsar --no-default-features --features tokio-runtime,compression`
 * `cargo add schemars`
-    - **has extra features**
     - make pulsar json schema
 
 ### Data Analysis
@@ -152,7 +146,7 @@
     - for windows
 * `cargo add indicatif`
 * `cargo add ratatui`
-* `cargo add mincolor`
+* `cargo add comfy-table`
 
 #### System Info
 
@@ -168,7 +162,6 @@
 
 * `cargo add aho-corasick`
 * `cargo add alphanumeric-sort`
-* `cargo add float-ord`
 
 ### Language bindings
 
