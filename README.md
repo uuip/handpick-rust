@@ -19,7 +19,7 @@
 ### Rust patterns
 
 * `cargo add regex`
-* `cargo add dotenvy`
+* `cargo add envy dotenvy`
 * `cargo add fastrand`
 * `cargo add rand`
 * `cargo add duplicate`
