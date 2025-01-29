@@ -90,7 +90,7 @@
 * `cargo add postgres-from-row`
 * `cargo add postgres-types --features derive`
 * `cargo add sqlx --features runtime-tokio,tls-native-tls,postgres,chrono`
-* `cargo add sea-orm --features sqlx-postgres,runtime-tokio-native-tls,macros`
+* `cargo add sea-orm --features sqlx-postgres,runtime-tokio,macros`
 
 ### Web Framework
 
@@ -128,7 +128,7 @@
 
 ### Async
 
-* `cargo add futures-util`
+* `cargo add futures`
 * `cargo add tokio --features full`
 * `cargo add async-channel`
 
