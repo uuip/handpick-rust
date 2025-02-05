@@ -1,165 +1,195 @@
-## Short and handpick Rust crates list.
+# Short and handpick Rust crates list.
 
-just `cargo add ...` or edit Cargo.toml.
+## Exceptions
 
-### Rust patterns
+* `cargo add anyhow`
+* `cargo add thiserror`
 
-* anyhow = "1.0.80"
-* thiserror = "1.0.57"
-* once_cell = "1.19.0"
-* dotenvy = "0.15.7"
-* rand = "0.8.5"
-* regex = "1.10.3"
-* duplicate = "1.0.0"
-* itertools
-* generator
-* sysinfo
-* num_cpus
+## Macros
 
-### Data Type
+* `cargo add duplicate`
 
-* uuid = { version = "1.7.0", features = ["v4", "fast-rng"] }
-* byteorder = "1.5.0"
-* bytes = "1.5.0"
-* indexmap
-* rust_decimal  
-  Decimal::MAX = 79228162514264337593543950335 7.92e28
-* bigdecimal  
-  when num > Decimal::MAX
-* num-bigint  
-  when num > i128::MAX (170141183460469231731687303715884105727) 1.7e38
+## Data structures
 
-#### Enum
+* `cargo add dashmap`
+* `cargo add indexmap`
+* `cargo add itertools`
 
-* num_enum = "0.7.2"
-* strum = { version = "0.26.1", features = ["derive"] }
-* enum-iterator
-* serde_with = "3.6.1" # serde string enum
-* serde_repr = "0.1.18" # serde num enum
+## Global Variable
 
-### Date and Time
+| std                             | crate                               |
+|---------------------------------|-------------------------------------|
+| std::cell::{OnceCell, LazyCell} | once_cell::unsync::{OnceCell, Lazy} |
+| std::sync::OnceLock             | once_cell::sync::OnceCell           |
+| std::sync::LazyLock             | once_cell::sync::Lazy               |
 
-* chrono = { version = "0.4.34", default-features = false, features = ["clock", "serde",] }
-* chrono-tz = "0.8.6"
-* time = { version = "0.3.31", features = ["formatting","macros"] }
+## Data Types
 
-### Logging
+### uuid
 
-* log = { version = "0.4.20", features = ["release_max_level_info"] }
-* env_logger = "0.11.2"
-* flexi_logger = "0.27.4"
+* `cargo add uuid --features v4,fast-rng`
+* `cargo add short-uuid`
 
-* tracing = "0.1.40"
-* tracing-rolling-file = "0.1.2" # support rolling by log file size
-* tracing-subscriber = { version = "0.3.18", features = ["local-time"]} # use time crate and local time zone
-* tracing-subscriber = { version = "0.3.18", features = ["chrono"]} # use chromo crate, can choose Local when defining
-* tracing-appender = "0.2.3" # time in log's file name is UTC
-* tracing-appender = { package = "clia-tracing-appender", version = "0.2.5", optional = true } # time in log's file name
-  is Local
+### bytes
 
-### Serialization
+* `cargo add byteorder bytes`
 
-* serde = { version = "1.0.196", features = ["derive"] }
-* serde_json = "1.0.113"
-* serde_yaml = "0.9.32"
-* display_json = "0.2.1"
+### datetime
 
-### File System
+* `cargo add chrono --no-default-features --features clock,serde`
+* `cargo add chrono-tz`
+* `cargo add time --features formatting,macros`
 
-* glob = "0.3.1"
+### enum
 
-### File Processing
+* `cargo add num_enum`
+* `cargo add strum --features derive`
+* `cargo add serde_with` - serializing string enum
+* `cargo add serde_repr` - serializing num enum
 
-* calamine = "0.24.0" # read xlsx
-* rust_xlsxwriter = "0.62.0" # write xlsx
+## Numeric and Mathematical
 
-### Web Client
+* `cargo add rand`
+* `cargo add fastrand`
+* `cargo add rust_decimal` - support Decimal::MAX 7.92e28
+* `cargo add bigdecimal` - used when num > Decimal::MAX
+* `cargo add num-bigint` - used when num > i128::MAX 1.7e38
 
-* reqwest = { version = "0.11.24", features = ["json", "gzip"] }
-* scraper = "0.18.1" # web content extracting
-* ureq
+## Logging
 
-### ORM & SQL Tools
+* `cargo add log --features release_max_level_info`
+* `cargo add env_logger`
+* `cargo add flexi_logger`
 
-* tokio-postgres = { version = "0.7.10", features=["with-serde_json-1","with-chrono-0_4"]}
-* deadpool-postgres = "0.12.1"
-* postgres-from-row = "0.5.2"
-* postgres-types = { version = "0.2.6", features = ["derive"]}
-* sqlx = { version = "0.7.3", features = ["runtime-tokio", "sqlite", "chrono"] }
-* sea-orm = { version = "0.12.14", features = ["sqlx-sqlite", "runtime-tokio-native-tls", "macros"] }
+## Text Processing
 
-### KV DataBase
+* `cargo add regex`
 
-* rocksdb = "0.22.0"
+## File Processing
 
-### Web Framework
+* `std::env::home_dir()`
+* `cargo add camino`
+* `cargo add glob`
+* `cargo add toml`
+* `cargo add yaml-rust2`
+* `cargo add roxmltree`
 
-* axum = { version = "0.7.4"}
-* axum-extra = { version = "0.9.2", features = ["typed-header"] }<br>
-  [axum](https://github.com/uuip/axum-demo/blob/main/Cargo.toml)
-* tower-http = { version = "0.5.1", features = ["cors"] }
-* jsonwebtoken = "9.2.0"
-* validator = { version = "0.16.1", features = ["derive"] }
-* serde_urlencoded = "0.7.1"
+## Excel Processing
 
-### Async
+* `cargo add calamine`
+* `cargo add rust_xlsxwriter --features zlib,ryu`
 
-* futures-util = "0.3.30"
-* tokio = { version = "1.36.0", features = ["full"] }
-* async-channel = "2.2.0" # deadqueue
+## Serialization
 
-### Concurrency
+* `cargo add serde --features derive`
+* `cargo add serde_json`
+* `cargo add serde_json_path`
 
-* rayon
+## Configuration
 
-### Shell
+* `cargo add envy dotenvy`
 
-* colored = "2.1.0" # mincolor = "2"
-* enable-ansi-support = "0.2.1" # for windows
-* clap = { version = "4", features = ["derive"] }
-* pico-args
-* indicatif
-* ratatui
+## Caching
 
-### Version Structure
+* `cargo add http-cache-reqwest`
+* `cargo add cached` - python lru_cache
+* `cargo add moka` - common cache
 
-* semver = "1.0.21"
+## KV DataBase
 
-### Optimize Performance
+* `cargo add rocksdb`
 
-* arc-swap
-* phf
-* ahash
-* slab
+## Async
 
-### Algorithm
+* `cargo add futures`
+* `cargo add tokio --features full`
+* `cargo add async-channel`
 
-* aho-corasick
-* alphanumeric-sort
-* float-ord
+## Web Client
 
-### Language bindings
+* `cargo add reqwest --features json,gzip`
+* `cargo add scraper`
 
-* [pyo3](https://github.com/PyO3/pyo3)
-* libloading
-* rustix
+## ORM & SQL Tools
 
-### Cryptography
+* `cargo add tokio-postgres --features with-serde_json-1,with-chrono-0_4`
+* `cargo add deadpool-postgres`
+* `cargo add postgres-from-row`
+* `cargo add postgres-types --features derive`
+* `cargo add sqlx --features runtime-tokio,postgres,chrono`
+* `cargo add sea-orm --features sqlx-postgres,runtime-tokio,macros`
+
+## Web Framework
+
+* `cargo add axum`
+* `cargo add axum-extra --features typed-header`
+* `cargo add tower-http --features cors`
+* `cargo add jsonwebtoken`
+* `cargo add validator --features derive`
+* `cargo add serde_urlencoded`
+
+## Web3
+
+* `cargo add alloy`
+* ~~ethers = { version = "2.0.13", default-features = false,
+  features = ["abigen", "legacy", "openssl"] }~~
+
+## Concurrency
+
+* `cargo add rayon`
+
+## Shell
+
+* `cargo add colored`
+* `cargo add crossterm --no-default-features --features events`
+* `cargo add clap --features derive`
+* `cargo add enable-ansi-support`     - for windows
+* `cargo add indicatif`
+* `cargo add ratatui`
+* `cargo add comfy-table`
+
+## System Info
+
+* `cargo add sysinfo`
+* `cargo add num_cpus`
+
+## Cryptography
 
 * [hashes](https://github.com/RustCrypto/hashes)
+* `cargo add base64`
 
-### Web3
+## Message Queue
 
-* ethers = { version = "2.0.13", default-features = false, features = ["abigen", "legacy", "openssl"] }
-* rustc-hex = "2.1.0" # only use uint::FromHexError with thiserror
-* uint = "0.9.5" # only use rustc_hex::FromHexError with thiserror
+* `cargo add pulsar --no-default-features --features tokio-runtime,compression`
+* `cargo add schemars` - make pulsar json schema
 
-### Message Queue
+## Data Analysis
 
-* pulsar = { version = "6.1.0", default-features = false, features = ["tokio-runtime", "compression"]}
-* schemars = "0.8.16" # make pulsar json schema
+* `cargo add polars --features parquet,lazy,is_in,rank,abs,streaming,cutqcut,propagate_nans`
+* `cargo add ndarray --features rayon`
 
-### Data Analysis
+## Version Structure
 
-* polars = { git = "https://github.com/pola-rs/polars", branch = "main", features = [
-  "parquet", "lazy", "is_in", "rank", "abs", "streaming", "cutqcut", "propagate_nans", "dtype-full", "random"] }
+* `cargo add semver`
+
+## Algorithm
+
+* `cargo add aho-corasick`
+* `cargo add alphanumeric-sort`
+
+## Language bindings
+
+* [pyo3](https://github.com/PyO3/pyo3)
+
+## Alternative
+
+* `cargo add serde_yaml_ng`
+* `cargo add quick_xml`
+* `cargo add simple_excel_writer`
+* `cargo add phf`
+* `cargo add arc-swap`
+* `cargo add papaya`
+* `cargo add eyre` - include exc file name and line
+* `cargo add home`
+* `cargo add directories`
+* `cargo add config --no-default-features --features convert-case,yaml`
