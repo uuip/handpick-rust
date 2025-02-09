@@ -93,7 +93,6 @@
 
 * `cargo add http-cache-reqwest`
 * `cargo add cached` - python lru_cache
-* `cargo add moka` - common cache
 
 ## KV DataBase
 
@@ -145,7 +144,8 @@
 * `cargo add clap --features derive`
 * `cargo add enable-ansi-support`     - for windows
 * `cargo add indicatif`
-* `cargo add ratatui`
+* `cargo add rfd --no-default-features`
+* `cargo add dialoguer --no-default-features`
 * `cargo add comfy-table`
 
 ## System Info
@@ -183,13 +183,14 @@
 
 ## Alternative
 
-* `cargo add serde_yaml_ng`
-* `cargo add quick_xml`
-* `cargo add simple_excel_writer`
-* `cargo add phf`
-* `cargo add arc-swap`
-* `cargo add papaya`
-* `cargo add eyre` - include exc file name and line
-* `cargo add home`
 * `cargo add directories`
 * `cargo add config --no-default-features --features convert-case,yaml`
+* `cargo add eyre` - include exc file name and line
+* `cargo add home`
+* `cargo add quick_xml`
+* `cargo add simple_excel_writer`
+* `cargo add serde_yaml_ng`
+* `cargo add phf`
+* `cargo add arc-swap`
+* `cargo add moka` - common cache
+* `cargo add papaya`
