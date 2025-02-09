@@ -91,7 +91,7 @@
 
 ## Caching
 
-* `cargo add http-cache-reqwest`
+* `cargo add reqwest-middleware http-cache-reqwest`
 * `cargo add cached` - python lru_cache
 
 ## KV DataBase
@@ -130,8 +130,6 @@
 ## Web3
 
 * `cargo add alloy`
-* ~~ethers = { version = "2.0.13", default-features = false,
-  features = ["abigen", "legacy", "openssl"] }~~
 
 ## Concurrency
 
@@ -183,13 +181,13 @@
 
 ## Alternative
 
-* `cargo add directories`
 * `cargo add config --no-default-features --features convert-case,yaml`
-* `cargo add eyre` - include exc file name and line
+* `cargo add directories`
 * `cargo add home`
 * `cargo add quick_xml`
 * `cargo add simple_excel_writer`
 * `cargo add serde_yaml_ng`
+* `cargo add eyre` - include exc file name and line
 * `cargo add phf`
 * `cargo add arc-swap`
 * `cargo add moka` - common cache
