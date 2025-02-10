@@ -185,7 +185,7 @@
 * `cargo add directories`
 * `cargo add home`
 * `cargo add quick_xml`
-* `cargo add simple_excel_writer`
+* ~~`cargo add simple_excel_writer`~~
 * `cargo add serde_yaml_ng`
 * `cargo add eyre` - include exc file name and line
 * `cargo add phf`
