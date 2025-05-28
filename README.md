@@ -68,7 +68,7 @@
 ## File Processing
 
 * `std::env::home_dir()`
-* `cargo add camino`
+* `cargo add camino`  - UTF-8 paths
 * `cargo add glob`
 * `cargo add toml`
 * `cargo add yaml-rust2`
@@ -142,7 +142,7 @@
 * `cargo add clap --features derive`
 * `cargo add enable-ansi-support`     - for windows
 * `cargo add indicatif`
-* `cargo add rfd --no-default-features`
+* `cargo add rfd --no-default-features`  - File Dialog
 * `cargo add dialoguer --no-default-features`
 * `cargo add comfy-table`
 
