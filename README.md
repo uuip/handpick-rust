@@ -59,7 +59,6 @@
 
 * `cargo add log --features release_max_level_info`
 * `cargo add env_logger`
-* `cargo add flexi_logger`
 
 ## Text Processing
 
@@ -145,11 +144,12 @@
 * `cargo add rfd --no-default-features`  - File Dialog
 * `cargo add dialoguer --no-default-features`
 * `cargo add comfy-table`
-
+  
 ## System Info
 
 * `cargo add sysinfo`
 * `cargo add num_cpus`
+* `cargo add netdev`
 
 ## Cryptography
 
@@ -175,6 +175,10 @@
 * `cargo add aho-corasick`
 * `cargo add alphanumeric-sort`
 
+## Process
+* `cargo add duct`
+* `cargo add ctrlc`
+
 ## Language bindings
 
 * [pyo3](https://github.com/PyO3/pyo3)
@@ -184,11 +188,7 @@
 * `cargo add config --no-default-features --features convert-case,yaml`
 * `cargo add directories`
 * `cargo add home`
+* `cargo add cliclack`
 * `cargo add quick_xml`
-* ~~`cargo add simple_excel_writer`~~
-* `cargo add serde_yaml_ng`
 * `cargo add eyre` - include exc file name and line
-* `cargo add phf`
 * `cargo add arc-swap`
-* `cargo add moka` - common cache
-* `cargo add papaya`
